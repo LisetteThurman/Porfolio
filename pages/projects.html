@@ -1,0 +1,122 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>repl.it</title>
+
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<script src="https://toolness.github.io/p5.js-widget/p5-widget.js"></script>
+</head>
+
+<body>
+
+}  
+      <img id="banner" src="../images/Sunset.jpeg" width="500">
+      <h1>Lisette Thurman Computer Science Porfolio </h1>
+      
+      <nav class="menu">
+
+        <div class="box">
+            <a href="/pages/home.html">Home</a>
+        </div>
+        <div class="box">
+            <a href="/pages/aboutMe.html">AboutMe</a>
+        </div>
+        <div class="box">
+            <a href="/pages/projects.html">Projects</a>
+        </div>
+        <div class="box">
+            <a href="/pages/deepThoughts.html">DeepThoughts</a>
+        </div>
+    </nav>
+    <!--/menu-->
+
+  
+ 
+<div>
+  
+ 
+
+       <h1>Project 1: Soccer Shooting! Use your mouse to push the ball once and watch to see if you score! Click on mouse to restart </h1>
+    <div class="flexbox-container">
+        <div class="flexbox-item  item-1"> <p>Something that was challenging about this project was figuring out how to make the soccer ball move with the mouse. Luckily I had some friends hat helped me and I finally figured it out after a couple days.</p> 
+            <script type="text/p5" data-height="450" data-autoplay data-preview-width="400">
+             
+	var x = 200;
+var y = 350;
+var xspeed = Math.floor(Math.random() * 5 - 2);
+var yspeed = Math.floor(Math.random() * 3 + 1);
+var kick = false;
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(20, 100, 250);
+  fill("green");
+  rect(0, 300, 400, 100);
+  goal();
+  if (mouseX > x - 25 && mouseY > y - 25 && mouseX < x + 25 && mouseY < y + 25)
+    kick = true;
+  if (kick == true) {
+    x += xspeed;
+    y -= yspeed;
+  }
+  SoccerBall();
+  Person();
+
+  if (x < 400 && x > 320 && y > 200 && y < 300) {
+    scored();
+    y += 2 * yspeed;
+  }
+}
+function scored() {
+  textSize(60);
+  text("GOAL!!!!!", 100, 100);
+}
+function goal() {
+  fill(255);
+  rect(320, 200, 100, 100);
+}
+
+function mouseClicked() {
+  reset();
+}
+function reset() {
+  x = 200;
+  y = 350;
+  xspeed = Math.floor(Math.random() * 3 + 1);
+  yspeed = Math.floor(Math.random() * 3 + 1);
+  kick = false;
+}
+function SoccerBall() {
+  fill("pink");
+  ellipse(x, y, 50, 50);
+}
+
+function Head() {
+  fill(200, 200, 50);
+  ellipse(mouseX, mouseY - 170, 60, 60);
+}
+function Arms() {
+  line(mouseX, mouseY - 140, mouseX, mouseY);
+  line(mouseX, mouseY - 120, mouseX - 50, mouseY - 90);
+  line(mouseX, mouseY - 120, mouseX + 50, mouseY - 90);
+}
+function Legs() {
+  line(mouseX, mouseY + 0, mouseX - 40, mouseY + 60);
+  line(mouseX, mouseY + 0, mouseX + 40, mouseY + 60);
+}
+function Person() {
+  Head();
+  Arms();
+  Legs();
+}
+</script>  
+            
+            <div class="flexbox-item item-2"> </div>
+        </div>
+    </div>
+     <div id="sketch-div"></div>
+

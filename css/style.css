@@ -1,0 +1,87 @@
+
+    body{
+      background-color:#90e0ef;
+    }
+		h1 {
+			font-size: 35;
+			color: #c77dff;
+		}
+    h2{
+      color: #ff5c8a;
+    }
+   #banner{
+     width: 100%;
+     height: 120px;
+    
+   }
+.menu {
+    display: flex;
+   
+    padding: 2px;
+    justify-content: space-around;
+}
+.menu a {
+    color: #FF99FF;
+    text-decoration: none;
+    font-family: Notable;
+    font-size: 22px;
+}
+.box {
+    flex-grow: 1;
+    background: #CCFFCC;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #884DFF;
+}
+.flexbox-container {
+    display: flex;
+    flex-direction: row;
+    border: none;
+  
+    
+}
+.flexbox-item {
+    margin: 5px;
+    padding: 3px;
+   
+    background-color: #D9D9D9;
+}
+.item-1 {
+    /*flex-grow: 1;*/
+    width: 50%;
+    min-height: 50px;
+    font-family: 'Secular One', sans-serif;
+    font-size: 37px;
+    background-color: #90e0ef;
+  
+}
+.item-2 {
+    /*flex-grow: 2;*/
+    width: 50%;
+   font-size: 30px;
+    background-color: #90e0ef;
+    
+}
+
+.item-3 {
+    /*flex-grow: 3;*/
+    width: 10%;
+    min-height: 300px;
+    background-color: rgb(255, 255, 255);
+}
+#imgtag{
+  width: 300px;
+  height: 300px;
+  align-self: center;
+}
+.box:hover{
+  background-color:rgb(255, 233, 201); 
+}
+
+.aboutMePage {
+  font-size: 35;
+}
+
+.aboutMePage2{
+  font-size: 25;
+}
