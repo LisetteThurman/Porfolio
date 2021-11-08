@@ -120,4 +120,174 @@ function Person() {
         </div>
     </div>
      <div id="sketch-div"></div>
+<div class="flexbox-container">
+        <div class="flexbox-item  item-1">
+          <script type="text/p5" data-height="450" data-autoplay data-preview-width="400">
+
+var r;
+var g;
+var b;
+var die;
+function setup() {
+  createCanvas(400, 400);
+  noLoop();
+}
+
+function draw() {
+  background(220);
+  for (var i = 0; i < width; i+=60) {
+    for (var w = 0; w < height; w+=60) {
+      die = new Die(i, w);
+      die.show(random(20, 225), random(20, 225), random(20, 225));
+       
+        die.roll();
+      die.show();
+      
+    }
+  }
+
+}
+
+class Die {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+    this.r = random(20, 225);
+    this.b = random(20, 225);
+    this.g = random(20, 225);
+    this.val=0;
+  }
+  roll() {
+    this.val = Math.floor(random(1, 7));
+   console.log(this.val);
+  }
+  show(r, g, b) {
+    fill(r, g, b);
+    rect(this.x, this.y, 40, 40);
+  
+    if(this.val==1){
+      fill(0,0,0);
+      ellipse(this.x+10, this.y+30, 7, 7);
+      
+    }else if(this.val==2){
+      fill(0,0,0);
+    
+      ellipse(this.x+10, this.y+20, 7,7);
+      ellipse(this.x+10, this.y+33, 7,7);
+      
+    }
+    else if(this.val==3){
+      fill(0,0,0);
+    
+      ellipse(this.x+10, this.y+20, 7,7);
+      ellipse(this.x+10, this.y+33, 7,7);
+      ellipse(this.x+25, this.y+20, 7,7);
+    } 
+    else if(this.val==4){
+      fill(0,0,0);
+    
+      ellipse(this.x+10, this.y+20, 7,7);
+      ellipse(this.x+10, this.y+33, 7,7);
+      ellipse(this.x+25, this.y+20, 7,7);
+      ellipse(this.x+25, this.y+33, 7,7);
+    }
+    else if(this.val==5){
+      fill(0,0,0);
+    
+      ellipse(this.x+10, this.y+20, 7,7);
+      ellipse(this.x+10, this.y+33, 7,7);
+      ellipse(this.x+25, this.y+20, 7,7);
+      ellipse(this.x+25, this.y+33, 7,7);
+      ellipse(this.x+10, this.y+7, 7,7);
+    }
+    else if (this.val==6){
+      fill(0,0,0);
+    
+     ellipse(this.x+10, this.y+20, 7,7);
+      ellipse(this.x+10, this.y+33, 7,7);
+      ellipse(this.x+25, this.y+20, 7,7);
+      ellipse(this.x+25, this.y+33, 7,7);
+      ellipse(this.x+10, this.y+7, 7,7);
+      ellipse(this.x+25, this.y+7, 7,7);
+    }
+      
+      
+      console.log(this.val);
+    //ellipse(this.x+10, this.y+30, 50, 50);
+
+  }
+  
+}
+function mousePressed() {
+  redraw();
+}
+
+</script>  
+            
+            <div class="flexbox-item item-2"> </div>
+        </div>
+
+    </div>
+     <div id="sketch-div"></div>
+
+
+     <div class="flexbox-container">
+        <div class="flexbox-item  item-1">
+          <script type="text/p5" data-height="450" data-autoplay data-preview-width="400">
+var headwidth = 80;
+var headheight = 80;
+var bodywidth = 30;
+var bodyheight = 50;
+var lefteyewidth = 10;
+var lefteyeheight = 10;
+var righteyewidth = 10;
+var righteyeheight = 10;
+var mouthwidth = 15;
+var mouthheight = 15;
+var x;
+var y;
+
+function setup() {
+  createCanvas(400, 400);
+  x = 200;
+  y = 200;
+}
+
+function draw() {
+  background(400, 130, 10);
+
+  push();
+  translate(width / 2, height / 2);
+  x += random(-5, 5);
+  y += random(-5, 5);
+  if (x > width-headwidth || x < 0+headwidth || x>width-bodywidth || x < 0+bodywidth || x > width-mouthwidth || x < 0+mouthwidth|| x > width-lefteyewidth || x < 0+lefteyewidth || x > width-righteyewidth || x < 0+righteyewidth ) 
+    x *= -1;
+
+  if (y > height-headheight || y < 0+headheight || y>height-bodyheight || y < 0+bodyheight ||y>height-mouthheight || y < 0+mouthheight || y>height-lefteyeheight || y < 0+lefteyeheight || y>height-righteyeheight || y < 0+righteyeheight ) {
+    y *= -1;
+  }
+  pop();
+  ghost();
+}
+
+function ghost() {
+  fill("white");
+  ellipse(x, y, headwidth, headheight);
+  ellipse(x, y*1.325, bodywidth, bodyheight);
+  ellipse(x*.94, y, lefteyewidth, lefteyeheight);
+  ellipse(x*1.05, y, righteyewidth, righteyeheight);
+  ellipse(x, y*1.09, mouthwidth, mouthheight);
+}
+
+
+
+          </script>  
+            
+            <div class="flexbox-item item-2"> </div>
+        </div>
+
+    </div>
+     <div id="sketch-div"></div>
+
+
 
